@@ -1,0 +1,22 @@
+{
+  "name": "Node.js v20 on AWS Lambda",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        // Jest supports
+        "Orta.vscode-jest",
+
+        // ESLint
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "postCreateCommand": "HUSKY=0 CI=true pnpm install --frozen-lockfile"
+}

@@ -1,0 +1,12 @@
+{
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  // configurations for Jest extension
+  "jest.runMode": "on-demand",
+  // configurations for Conventional Commits extension
+  "conventionalCommits.gitmoji": false,
+  "conventionalCommits.promptBody": false,
+  "conventionalCommits.promptFooter": false,
+}

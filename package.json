@@ -1,0 +1,41 @@
+{
+  "name": "node-typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "A pre-configured starter for Node.js with TypeScript, ESLint, Prettier, Jest and essential project structure",
+  "author": "lamhq",
+  "license": "MIT",
+  "packageManager": "pnpm@9.12.3",
+  "scripts": {
+    "lint": "tsc --noEmit && eslint",
+    "test": "jest",
+    "build": "./scripts/build.sh",
+    "prepare": "node .husky/install.mjs"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@eslint/js": "^9.13.0",
+    "@jest/globals": "^29.7.0",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/aws-lambda": "^8.10.92",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.5.7",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^28.8.3",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.12.1"
+  }
+}
