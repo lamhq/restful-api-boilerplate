@@ -7,7 +7,7 @@
     "strictNullChecks": true,  // Ensures strict handling of null and undefined
     "strictBindCallApply": true,  // Checks correctness of arguments passed to call, apply, and bind
     "strictFunctionTypes": true,  // Ensures function parameters are more strictly checked
-    "strictPropertyInitialization": true,  // Makes sure class properties are correctly initialized
+    "strictPropertyInitialization": false,  // Makes sure class properties are correctly initialized
     "noImplicitAny": true,  // Requires explicit type declarations
     "noImplicitThis": true,  // Disallows `this` keyword with an implicit `any` type
     "alwaysStrict": true,  // Ensures `use strict` is always used
@@ -21,7 +21,12 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "outDir": "dist/code",
-    "rootDir": "src"
+    "rootDir": "src",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   }
 }

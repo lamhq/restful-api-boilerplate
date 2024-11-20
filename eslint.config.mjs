@@ -25,8 +25,14 @@ export default tseslint.config(
     files: ['**/*.spec.ts', '**/*.test.ts'],
     ...pluginJest.configs['flat/all'],
   },
+  // global ignore block
   {
     // include only the `src` directory
-    ignores: ["*", "!src/"]
-  },  
+    ignores: ["*", "!src/"],
+  },
+  {
+    rules: {
+      '@typescript-eslint/no-extraneous-class': 'off'
+    }
+  },
 );

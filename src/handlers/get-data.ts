@@ -1,5 +1,4 @@
 import { APIGatewayProxyResult } from 'aws-lambda';
-import sharp from 'sharp';
 
 /**
  *
@@ -13,18 +12,8 @@ import sharp from 'sharp';
 
 export const lambdaHandler = async (): Promise<APIGatewayProxyResult> => {
   try {
-    const semiTransparentRedPng = await sharp({
-      create: {
-        width: 48,
-        height: 48,
-        channels: 4,
-        background: { r: 255, g: 0, b: 0, alpha: 0.5 },
-      },
-    })
-      .png()
-      .toBuffer();
-    console.log(semiTransparentRedPng);
-
+    console.log('qqqq');
+    await Promise.resolve(true);
     return {
       statusCode: 200,
       body: 'ok',
