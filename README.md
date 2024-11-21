@@ -1,4 +1,4 @@
-# RESTful API Boilerplate
+# RESTful API Template
 
 ## Overview
 

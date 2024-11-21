@@ -20,19 +20,34 @@ export default tseslint.config(
   },
   eslintConfigPrettier,
   eslintPluginPrettierRecommended,
-  {
-    // configuration for Jest test files
-    files: ['**/*.spec.ts', '**/*.test.ts'],
-    ...pluginJest.configs['flat/all'],
-  },
+
   // global ignore block
   {
     // include only the `src` directory
     ignores: ["*", "!src/"],
   },
+
+  // configuration for Jest test files
+  {
+    files: ['**/*.spec.ts', '**/*.test.ts'],
+    ...pluginJest.configs['flat/all'],
+  },
+
+  // custom rules for Jest test files
+  {
+    files: ['**/*.spec.ts', '**/*.test.ts'],
+    rules: {
+      'jest/no-hooks': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+    }    
+  },
+
+  // application rules
   {
     rules: {
-      '@typescript-eslint/no-extraneous-class': 'off'
+      '@typescript-eslint/no-extraneous-class': 'off',
     }
-  },
+  }
 );

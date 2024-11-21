@@ -24,7 +24,4 @@ podman run --rm \
   -c "./scripts/install-deps.sh"
 echo "Runtime dependencies installed"
 
-# Create package.json file for ESM
-echo '{ "type": "module" }' > "${BUILD_DIR}/code/package.json"
-
 echo "Build successfully."

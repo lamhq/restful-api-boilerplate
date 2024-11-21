@@ -7,7 +7,7 @@ import { Activity, ActivityQuery } from './activity.entity';
 import { ActivityEvent } from './activity.event';
 import { AddActivityDto } from './dto/add-activity.dto';
 import { UpdateActivityDto } from './dto/update-activity.dto';
-import { EntityEventType } from '@/common/types/entity-event-type';
+import { EntityEventType } from '../../common/types/entity-event-type';
 
 @Injectable()
 export class ActivityService {

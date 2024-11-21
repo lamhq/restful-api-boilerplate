@@ -2,6 +2,7 @@ import { Seeder, SeederFactoryManager } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
 import { Activity } from '../../diary/activity/activity.entity';
 import { Tag } from '../../diary/tag/tag.entity';
+import { ObjectId } from 'mongodb';
 
 export default class ActivitySeeder implements Seeder {
   public async run(
@@ -11,7 +12,17 @@ export default class ActivitySeeder implements Seeder {
     const activityFactory = factoryManager.get(Activity);
 
     // save activities
-    const activities = await activityFactory.saveMany(200);
+    const activity = await activityFactory.save(
+      new Activity({
+        id: new ObjectId('673ec4733049d5c9042506a9'),
+        content: 'Sophismata cras dolor viriliter aut.',
+        time: new Date('2023-11-23T10:00:00.441Z'),
+        tags: ['suet', 'dude', 'pantry', 'gator'],
+        income: 424,
+        outcome: 713,
+      })
+    );
+    const activities = [activity, ...(await activityFactory.saveMany(199))];
 
     // save tags
     const allTags = activities.reduce<string[]>(

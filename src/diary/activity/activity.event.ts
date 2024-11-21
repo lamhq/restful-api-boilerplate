@@ -1,4 +1,4 @@
-import { EntityEventType } from '@/common/types/entity-event-type';
+import { EntityEventType } from '../../common/types/entity-event-type';
 import { Activity } from './activity.entity';
 
 /**

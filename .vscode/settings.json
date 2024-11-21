@@ -1,7 +1,8 @@
 {
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
+    "source.fixAll.eslint": "explicit",
+    "source.removeUnusedImports": "explicit"
   },
   // configurations for Jest extension
   "jest.runMode": "on-demand",
