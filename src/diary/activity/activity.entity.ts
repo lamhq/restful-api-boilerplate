@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb';
 import { Expose, Transform } from 'class-transformer';
 import { Entity, Column, ObjectIdColumn } from 'typeorm';
-import { PaginationQuery } from '@/common/types/pagination-query';
+import { PaginationQuery } from '../../common/types/pagination-query';
 
 /**
  * The activity to be recorded

@@ -18,15 +18,9 @@
     "forceConsistentCasingInFileNames": true,  // Ensures consistent casing in file names
     "resolveJsonModule": true,  // Allows importing JSON modules
 
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "outDir": "dist/code",
-    "rootDir": "src",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "rootDir": "src"
   }
 }
