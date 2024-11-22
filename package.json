@@ -38,6 +38,8 @@
     "@types/aws-lambda": "^8.10.92",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.5.7",
+    "esbuild": "^0.24.0",
+    "esbuild-plugin-decorator": "^0.4.0",
     "eslint": "^9.13.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jest": "^28.8.3",

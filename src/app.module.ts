@@ -3,6 +3,7 @@ import { ConfigService, ConfigModule } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { configFactory } from './config';
+import { DiaryModule } from './diary/diary.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { configFactory } from './config';
     EventEmitterModule.forRoot({
       wildcard: true,
     }),
+    DiaryModule,
   ],
 })
 export class AppModule {}

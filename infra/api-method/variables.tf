@@ -27,22 +27,25 @@ variable "handler" {
   type = string
 }
 
-variable "layers" {
-  type = list(string)
-}
-
-variable "source_code_hash" {
-  type = string
-}
-
 variable "role" {
   type = string
 }
 
 variable "s3_bucket" {
   type = string
+  description = "S3 Bucket that store the code"
 }
 
-variable "s3_key" {
+variable "s3_prefix" {
   type = string
+  description = "Prefix for S3 object"
+}
+
+variable "env_vars" {
+  description = "Environment variables for the application"
+  type = object({
+    WEB_URL      = string
+    DB_URI       = string
+    NODE_OPTIONS = string
+  })
 }

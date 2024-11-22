@@ -1,4 +1,6 @@
 import { APIGatewayProxyResult } from 'aws-lambda';
+import { getNestContext } from '../../context';
+import { ActivityService } from './activity.service';
 
 /**
  *
@@ -10,13 +12,15 @@ import { APIGatewayProxyResult } from 'aws-lambda';
  *
  */
 
-export const getActivitiesHandler = async (): Promise<APIGatewayProxyResult> => {
+export const getActivities = async (): Promise<APIGatewayProxyResult> => {
   try {
-    console.log('qqqq');
-    await Promise.resolve(true);
+    console.log('Call handler');
+    const nestApp = await getNestContext();
+    const activityService = nestApp.get(ActivityService);
+    const [activities] = await activityService.findAll({ limit: 10 });
     return {
       statusCode: 200,
-      body: 'ok',
+      body: JSON.stringify(activities),
     };
   } catch (err) {
     console.log(err);

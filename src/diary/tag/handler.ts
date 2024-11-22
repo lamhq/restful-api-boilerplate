@@ -1,4 +1,6 @@
-import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
+import { APIGatewayProxyResult } from 'aws-lambda';
+import { getNestContext } from '../../context';
+import { TagService } from './tag.service';
 
 /**
  *
@@ -10,17 +12,14 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
  *
  */
 
-export const lambdaHandler = async (
-  event: APIGatewayProxyEvent
-): Promise<APIGatewayProxyResult> => {
+export const getTags = async (): Promise<APIGatewayProxyResult> => {
   try {
-    await Promise.resolve(event);
-    const envVal = process.env.MY_ENV_VAR ?? '';
+    const nestApp = await getNestContext();
+    const tagService = await nestApp.resolve(TagService);
+    const tags = await tagService.findAll();
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        MY_ENV_VAR: envVal,
-      }),
+      body: JSON.stringify(tags),
     };
   } catch (err) {
     console.log(err);

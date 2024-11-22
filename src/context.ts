@@ -12,6 +12,11 @@ export async function getNestContext(): Promise<INestApplicationContext> {
   return context;
 }
 
-getNestContext().catch(() => {
-  console.log('Error while creating Nest Application Context.');
-});
+console.log('Create Nest context');
+getNestContext()
+  .then(() => {
+    console.log('Nest context created.');
+  })
+  .catch(() => {
+    console.log('Error while creating Nest Application Context.');
+  });
