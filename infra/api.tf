@@ -17,11 +17,9 @@ resource "aws_api_gateway_deployment" "rest_api_deployment" {
     #       resources will show a difference after the initial implementation.
     #       It will stabilize to only change when resources change afterwards.
     redeployment = sha1(jsonencode([
-      aws_api_gateway_resource.data_resource.id,
-      module.get_data_method.method_id,
-      module.get_data_method.integration_id,
-      module.update_data_method.method_id,
-      module.update_data_method.integration_id,
+      aws_api_gateway_resource.diary_activities_resource.id,
+      module.diary_activities_get.method_id,
+      module.diary_activities_get.integration_id,
     ]))
   }
 
@@ -35,11 +33,4 @@ resource "aws_api_gateway_stage" "rest_api_v1_stage" {
   deployment_id = aws_api_gateway_deployment.rest_api_deployment.id
   rest_api_id   = aws_api_gateway_rest_api.rest_api.id
   stage_name    = "v1"
-}
-
-# resource `/data`
-resource "aws_api_gateway_resource" "data_resource" {
-  rest_api_id = aws_api_gateway_rest_api.rest_api.id
-  parent_id   = aws_api_gateway_rest_api.rest_api.root_resource_id
-  path_part   = "data"
 }

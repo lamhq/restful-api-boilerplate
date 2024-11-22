@@ -13,6 +13,7 @@ resource "aws_iam_role" "lambda_role" {
       }
     ]
   })
+  tags = local.role_tags
 }
 
 # Attach a AWS-managed policy `AWSLambdaBasicExecutionRole` to the role
