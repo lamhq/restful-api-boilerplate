@@ -43,9 +43,5 @@ variable "s3_prefix" {
 
 variable "env_vars" {
   description = "Environment variables for the application"
-  type = object({
-    WEB_URL      = string
-    DB_URI       = string
-    NODE_OPTIONS = string
-  })
+  type = map(string)
 }
