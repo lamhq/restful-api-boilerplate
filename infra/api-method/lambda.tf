@@ -26,7 +26,10 @@ resource "aws_lambda_function" "lambda_function" {
   memory_size      = 256
   architectures    = ["arm64"]
   environment {
-    variables = var.env_vars
+    variables = merge(var.env_vars, {
+      NO_COLOR = "true"
+      NODE_OPTIONS = "--enable-source-maps"
+    })
   }
 }
 

@@ -51,6 +51,23 @@ terraform apply -var-file="params.tfvars" --auto-approve
 ```
 
 
+## Test
+
+Calling API:
+```shell
+curl https://rsn6742yyk.execute-api.eu-central-1.amazonaws.com/v1/diary/activities
+```
+
+Benchmark:
+```shell
+curl -o /dev/null -s -w "\
+Time to resolve domain: %{time_namelookup}\n\
+Time to establish connection: %{time_connect}\n\
+Time to first byte: %{time_starttransfer}\n\
+Total time: %{time_total}\n" https://rsn6742yyk.execute-api.eu-central-1.amazonaws.com/v1/diary/activities
+```
+
+
 ## Clean up
 
 ```sh
